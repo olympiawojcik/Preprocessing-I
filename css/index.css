@@ -250,6 +250,7 @@ li {
   .container .left {
     width: 100%;
     order: 1;
+    border: none;
   }
 }
 .container .right {
