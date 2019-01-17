@@ -135,6 +135,7 @@ body {
   height: 100%;
 }
 /*Variables*/
+/*Mixins */
 /*General Styles*/
 html {
   /*10px if the browser was 16px*/
@@ -157,13 +158,23 @@ li {
 .container header {
   background-color: #3c3737;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 30rem;
   padding: 0 5rem;
   margin-bottom: 50px;
+}
+@media (max-width: 800px) {
+  .container header {
+    height: 35rem;
+  }
+}
+@media (max-width: 500px) {
+  .container header {
+    height: 45rem;
+  }
 }
 .container header h1 {
   font-size: 5rem;
@@ -177,20 +188,33 @@ li {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 50px;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .container header nav a {
   margin-top: 5rem;
-  padding-left: 5rem;
+  padding-left: 2rem;
   color: white;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    margin-top: 1rem;
+    padding: 0;
+  }
 }
 .container .intro-container {
   border: 1px solid white;
-  width: 70%;
+  width: 80%;
   padding: 10px 0;
   text-align: center;
 }
 .container .profile {
-  margin-bottom: 30px;
+  margin: 10px 10px 30px;
 }
 .container h2 {
   font-size: 2.5rem;
@@ -210,14 +234,31 @@ li {
 .container section {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+}
+@media (max-width: 800px) {
+  .container section {
+    flex-direction: column;
+  }
 }
 .container .left {
   border-right: 1px solid black;
   width: 30%;
   padding-right: 2%;
 }
+@media (max-width: 800px) {
+  .container .left {
+    width: 100%;
+    order: 1;
+  }
+}
 .container .right {
   width: 65%;
+}
+@media (max-width: 800px) {
+  .container .right {
+    width: 100%;
+  }
 }
 .container .text-container {
   margin-bottom: 20px;
@@ -227,19 +268,3 @@ li {
     width: 85%;
   }
 }
-/* Page-specific styles*/
-/*
-REM for fonts, PX for heights, % for left and right margins, paddings, width
-
-
-* [ ] Content: Intro - Have a short introduction as to why you would be a good hire
-* [ ] Content: Skills - Showcase a list of skills you have somewhere on your resume
-* [ ] Content: Work History - Showcase your work history somewhere on your resume
-* [ ] Content: Contact - Provide some way a potential employer could contact you.  Phone number, email, or a full on contact form (doesn't have to work)
-* [ ] Variables: Incorporate variables in your project for color and font stacks.  
-* [ ] Nesting: Every selector should be nested inside the main container.  Avoid having global styles unless they are element level.
-* [ ] Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
-* [ ] Mobile: Use nested-at rules to provide a mobile version of your resume.  Use `500px` as a `max-width` for mobile. 
-
-
-*/
