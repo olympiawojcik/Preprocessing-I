@@ -62,16 +62,26 @@ html, body {
 @font-stack: 'Raleway', Arial, sans-serif;
 @color-background: #3c3737;
 
+/*Mixins */
+
+.border-test() {
+	border: 2px dashed red;
+}
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
 
 /*General Styles*/
 html {
 	/*10px if the browser was 16px*/
 	/*1rem ====10px @ medium*/
 	font-size: 62.5%;  /* 62.5% OF 16PX IS 10PX, BASE OF 10*/
-	
 }
 
-p, a, li{
+p, a, l {
 	font-size: 1.7rem;
 }
 
@@ -85,14 +95,19 @@ p, a, li{
 
 	header {
 		background-color: @color-background;
-		display: flex;
+		.center;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 		width: 100%;
 		height: 30rem;
 		padding: 0 5rem;
 		margin-bottom: 50px;
+
+		@media (max-width: 800px) {
+			height: 35rem;
+		}
+		@media (max-width: 500px) {
+			height: 45rem;
+		}
 
 		h1 {
 			font-size: 5rem;
@@ -108,11 +123,22 @@ p, a, li{
 			width: 100%;
 			display: flex;
 			justify-content: flex-end;
-			
+			margin-top: 50px;
+			@media (max-width: 500px) {
+				flex-direction: column;
+				align-items: center;
+			}
+
 			a {
 				margin-top: 5rem;
-				padding-left: 5rem;
+				padding-left: 2rem;
 				color: white;
+				@media (max-width: 500px) {
+					margin-top: 1rem;
+					padding: 0;
+
+				}
+	
 			}
 			
 		}
@@ -121,7 +147,7 @@ p, a, li{
 
 	.intro-container {
 		border: 1px solid white;
-		width: 70%;
+		width: 80%;
 		padding: 10px 0;
 		text-align: center;
 
@@ -178,7 +204,7 @@ p, a, li{
 		}
 	}
 
-
+	
 }
 
 

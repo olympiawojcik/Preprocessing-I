@@ -135,6 +135,7 @@ body {
   height: 100%;
 }
 /*Variables*/
+/*Mixins */
 /*General Styles*/
 html {
   /*10px if the browser was 16px*/
@@ -144,7 +145,7 @@ html {
 }
 p,
 a,
-li {
+l {
   font-size: 1.7rem;
 }
 .container {
@@ -157,13 +158,23 @@ li {
 .container header {
   background-color: #3c3737;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 30rem;
   padding: 0 5rem;
   margin-bottom: 50px;
+}
+@media (max-width: 800px) {
+  .container header {
+    height: 35rem;
+  }
+}
+@media (max-width: 500px) {
+  .container header {
+    height: 45rem;
+  }
 }
 .container header h1 {
   font-size: 5rem;
@@ -177,15 +188,28 @@ li {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 50px;
+}
+@media (max-width: 500px) {
+  .container header nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .container header nav a {
   margin-top: 5rem;
-  padding-left: 5rem;
+  padding-left: 2rem;
   color: white;
+}
+@media (max-width: 500px) {
+  .container header nav a {
+    margin-top: 1rem;
+    padding: 0;
+  }
 }
 .container .intro-container {
   border: 1px solid white;
-  width: 70%;
+  width: 80%;
   padding: 10px 0;
   text-align: center;
 }
